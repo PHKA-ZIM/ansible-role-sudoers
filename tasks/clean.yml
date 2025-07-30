@@ -1,0 +1,6 @@
+---
+- name: Remove sudoers file for user
+  become: true
+  ansible.builtin.file:
+    path: "{{ sudoers_path }}/{{ sudoers_name }}"
+    state: absent

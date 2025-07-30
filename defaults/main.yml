@@ -1,0 +1,5 @@
+---
+sudoers_name: "{{ ansible_user | default('') }}"
+sudoers_config: ""
+
+sudoers_uninstall: false

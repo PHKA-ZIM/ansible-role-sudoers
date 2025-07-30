@@ -1,0 +1,16 @@
+---
+- name: Add sudoers configuration
+  when: sudoers_uninstall == false
+  block:
+    - name: Setup
+      when:
+        - sudoers_name | length > 0
+        - sudoers_config | length > 0
+      ansible.builtin.include_tasks: setup.yml
+
+- name: Remove sudoers configuration
+  when: sudoers_uninstall == true
+  block:
+    - name: Clean
+      when: sudoers_name | length > 0
+      ansible.builtin.include_tasks: clean.yml

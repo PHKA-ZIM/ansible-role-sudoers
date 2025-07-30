@@ -1,0 +1,3 @@
+---
+sudoers_visudo_bin: /usr/sbin/visudo
+sudoers_path: /etc/sudoers.d/

@@ -1,0 +1,9 @@
+---
+- name: Create sudoers file
+  become: true
+  ansible.builtin.template:
+    src: sudoers.j2
+    dest: "{{ sudoers_path }}/{{ sudoers_name }}"
+    mode: 0440
+    force: true
+    validate: "{{ sudoers_visudo_bin }} -cf %s"
